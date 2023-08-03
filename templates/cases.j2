@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Cases</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Cases</h1>
+
+    [<a href="/">Home</a> | <a href="projects">Projects</a> | <a href="municipalities">Municipalities</a> |
+     <a href="owners">Owners</a> | <a href="cases">Cases</a> |
+     <a href="lawyers">Lawyers</a> ]
+<div id="browse" style="display: block">
+<p><strong>Browse Planets</strong></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#">New</a></th>
+    <th></th>
+    <th>Case ID</th>
+    <th>Case Number</th>
+    <th>Deadline Date</th>
+    <th>Project ID</th>
+    <th>Lawyer ID</th>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >33100</td>
+    <td >1</td>
+    <td align="right" >09/08/2050</td>
+    <td>99445</td>
+    <td>101</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >32505</td>
+    <td>2</td>
+    <td align="right" >07/05/2029</td>
+    <td >98744</td>
+    <td>102</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right">32323</td>
+    <td>3</td>
+    <td align="right" >12/03/2063</td>
+    <td>99363</td>
+    <td>105</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right">32322</td>
+    <td>5</td>
+    <td align="right" >12/25/2099</td>
+    <td>93368</td>
+    <td>108</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right">38841</td>
+    <td>6</td>
+    <td align="right" >08/12/2035</td>
+    <td>91727</td>
+    <td>103</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert" style="display: block">
+    <form id="addPlanet">
+        <legend><strong>Add Case</strong></legend>
+          <fieldset class="fields">
+            <label> Case ID </label> <input type="text" name="name">
+            <label> Case Number </label> <input type="text" name="population">
+            <label> Deadline Date </label> <input type="text" name="language">
+            <label> Project ID </label> <input type="text" name="language">
+            <label> Lawyer ID </label> <input type="text" name="language">
+          </fieldset>
+          <input class="btn" type="submit" id="addPlanet" value="Add a Planet">
+          <input class="btn" type="button" value="cancel">
+	</form> <!--add new planet-->
+</div><!-- insert -->
+
+<p>&nbsp;</p>
+<div id="update" style="display: block">
+  <form id="updatePlanet">
+      <legend><strong>Update Case</strong></legend>
+          <fieldset class="fields">
+            <label> Case ID </label> <input type="text" name="name">
+            <label> Case Number </label> <input type="text" name="population">
+            <label> Deadline Date </label> <input type="text" name="language">
+            <label> Project ID </label> <input type="text" name="language">
+            <label> Lawyer ID </label> <input type="text" name="language">
+          </fieldset>
+    <input class="btn" type="submit" id="UpdateSavePlanet" value="Save Update Planet">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form id="deletePlanet">
+      <legend><strong>Delete Case</strong></legend>
+          <fieldset class="fields">
+            <label> Case ID </label> <input type="text" name="name">
+            <label> Case Number </label> <input type="text" name="population">
+            <label> Deadline Date </label> <input type="text" name="language">
+            <label> Project ID </label> <input type="text" name="language">
+            <label> Lawyer ID </label> <input type="text" name="language">
+          </fieldset>
+    <input class="btn" type="submit" id="DeletePlanet" value="Delete Planet">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- delete -->
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Lawyers</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Lawyers</h1>
+
+    [<a href="/">Home</a> | <a href="projects">Projects</a> | <a href="municipalities">Municipalities</a> |
+     <a href="owners">Owners</a> | <a href="cases">Cases</a> |
+     <a href="lawyers">Lawyers</a> ]
+<div id="browse" style="display: block">
+<p><strong>Browse Planets</strong></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#">New</a></th>
+    <th></th>
+    <th>Lawyer ID</th>
+    <th>Name</th>
+    <th>Licensed State</th>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >101</td>
+    <td >Phoenix Wright</td>
+    <td align="right" >FL</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >102</td>
+    <td >Tom McAfee</td>
+    <td align="right" >FL</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >105</td>
+    <td >Jack Harlow</td>
+    <td align="right" >GA</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >108</td>
+    <td >Langford Crossing</td>
+    <td align="right" >WA</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >103</td>
+    <td >Alex Anuller</td>
+    <td align="right" >FL</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert" style="display: block">
+    <form id="addPlanet">
+        <legend><strong>Add Lawyer</strong></legend>
+          <fieldset class="fields">
+            <label> Lawyer ID </label> <input type="text" name="name">
+            <label> Name </label> <input type="text" name="population">
+            <label> Licensed State </label> <input type="text" name="language">
+          </fieldset>
+          <input class="btn" type="submit" id="addPlanet" value="Add a Planet">
+          <input class="btn" type="button" value="cancel">
+	</form> <!--add new planet-->
+</div><!-- insert -->
+
+<p>&nbsp;</p>
+<div id="update" style="display: block">
+  <form id="updatePlanet">
+      <legend><strong>Update Lawyer</strong></legend>
+          <fieldset class="fields">
+            <label> Lawyer ID </label> <input type="text" name="name">
+            <label> Name </label> <input type="text" name="population">
+            <label> Licensed State </label> <input type="text" name="language">
+          </fieldset>
+    <input class="btn" type="submit" id="UpdateSavePlanet" value="Save Update Planet">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form id="deletePlanet">
+      <legend><strong>Delete Lawyer/strong></legend>
+          <fieldset class="fields">
+            <label> Lawyer ID </label> <input type="text" name="name">
+            <label> Name </label> <input type="text" name="population">
+            <label> Licensed State </label> <input type="text" name="language">
+          </fieldset>
+    <input class="btn" type="submit" id="DeletePlanet" value="Delete Planet">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- delete -->
+</body>
+</html>

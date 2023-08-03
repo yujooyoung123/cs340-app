@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Projects</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Projects</h1>
+
+    [<a href="/">Home</a> | <a href="projects">Projects</a> | <a href="municipalities">Municipalities</a> |
+     <a href="owners">Owners</a> | <a href="cases">Cases</a> |
+     <a href="lawyers">Lawyers</a> ]
+<div id="browse" style="display: block">
+
+<p><strong>Browse Projects</strong></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#">New</a></th>
+    <th></th>
+    <th>Project ID</th>
+    <th>Plat Map</th>
+    <th>Starting Date</th>
+  </tr>
+
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >99445</td>
+    <td >jackmap.pdf</td>
+    <td align="right" >05/16/1998</td>
+  </tr>
+
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >98744</td>
+    <td >map2.pdf</td>
+    <td align="right" >04/25/2013</td>
+  </tr>
+
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >93368</td>
+    <td >simpsonsmap.pdf</td>
+    <td align="right" >12/12/1912</td>
+  </tr>
+
+<tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >91727</td>
+    <td >erealdmap.pdf</td>
+    <td align="right" >07/08/2007</td>
+  </tr>
+
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >99363</td>
+    <td >harold.pdf</td>
+    <td align="right" >12/19/2012</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+
+<div>
+  <a>Search for a Project </a>
+  <input type="text" placeholder="Enter Project ID">
+</div>
+
+<div id="insert" style="display: block">
+    <form id="addPlanet">
+        <legend><strong>Add Project</strong></legend>
+          <fieldset class="fields">
+            <label> Project ID </label> <input type="text" name="name">
+            <label> Plat Map </label> <input type="text" name="population">
+            <label> Start Date </label> <input type="text" name="language">
+          </fieldset>
+          <input class="btn" type="submit" id="addPlanet" value="Add a Planet">
+          <input class="btn" type="button" value="cancel">
+	</form> <!--add new planet-->
+</div><!-- insert -->
+
+<p>&nbsp;</p>
+<div id="update" style="display: block">
+  <form id="updateProject">
+      <legend><strong>Update Project</strong></legend>
+          <fieldset class="fields">
+            <label> Project ID </label> <input type="text" name="name">
+            <label> Plat Map </label> <input type="text" name="population">
+            <label> Start Date </label> <input type="text" name="language">
+          </fieldset>
+    <input class="btn" type="submit" id="UpdateSavePlanet" value="Save Update Planet">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+      <legend><strong>Delete Project</strong></legend>
+          <fieldset class="fields">
+            <label> Project ID </label> <input type="text" name="name">
+            <label> Plat Map </label> <input type="text" name="population">
+            <label> Start Date </label> <input type="text" name="language">
+          </fieldset>
+    <input class="btn" type="submit" id="DeletePlanet" value="Delete Planet">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- delete -->
+</body>
+</html>

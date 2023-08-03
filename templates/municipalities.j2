@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>Municipalities</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Municipalities</h1>
+
+    [<a href="/">Home</a> | <a href="projects">Projects</a> | <a href="municipalities">Municipalities</a> |
+     <a href="owners">Owners</a> | <a href="cases">Cases</a> |
+     <a href="lawyers">Lawyers</a> ]
+
+<div id="browse" style="display: block">
+<p><strong>Browse Planets</strong></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#">New</a></th>
+    <th></th>
+    <th>Municipality ID</th>
+    <th>Name</th>
+    <th>Website</th>
+    <th>State</th>
+    <th>File Location</th>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >5214</td>
+    <td >Jefferson</td>
+    <td align="right" >jeff.com</td>
+    <td>Georgia</td>
+    <td>files/mun/5214</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >5547</td>
+    <td>Jackson</td>
+    <td align="right" >jackie.com</td>
+    <td >Washington</td>
+    <td>fukes/mun/5547</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right">5784</td>
+    <td>Keeowee</td>
+    <td align="right" >keeowee.com</td>
+    <td>South Carolina</td>
+    <td>files/mun/5784</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right">5466</td>
+    <td>Tacoseattle</td>
+    <td align="right" >conjunction.com</td>
+    <td>South Carolina</td>
+    <td>files/mun/5466</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right">5888</td>
+    <td>Wilkin</td>
+    <td align="right" >wilko.com</td>
+    <td>Illinois</td>
+    <td>files/mun/5888</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert" style="display: block">
+    <form id="addPlanet">
+        <legend><strong>Add Municipality</strong></legend>
+          <fieldset class="fields">
+            <label> Municipality ID </label> <input type="text" name="name">
+            <label> Name </label> <input type="text" name="population">
+            <label> Website </label> <input type="text" name="language">
+            <label> State </label> <input type="text" name="language">
+            <label> File Location </label> <input type="text" name="language">
+          </fieldset>
+          <input class="btn" type="submit" id="addPlanet" value="Add a Planet">
+          <input class="btn" type="button" value="cancel">
+	</form> <!--add new planet-->
+</div><!-- insert -->
+
+<p>&nbsp;</p>
+<div id="update" style="display: block">
+  <form id="updatePlanet">
+      <legend><strong>Update Municipality</strong></legend>
+          <fieldset class="fields">
+            <label> Municipality ID </label> <input type="text" name="name">
+            <label> Name </label> <input type="text" name="population">
+            <label> Website </label> <input type="text" name="language">
+            <label> State </label> <input type="text" name="language">
+            <label> File Location </label> <input type="text" name="language">
+          </fieldset>
+    <input class="btn" type="submit" id="UpdateSavePlanet" value="Save Update Planet">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form id="deletePlanet">
+      <legend><strong>Delete Municipality</strong></legend>
+          <fieldset class="fields">
+            <label> Municipality ID </label> <input type="text" name="name">
+            <label> Name </label> <input type="text" name="population">
+            <label> Website </label> <input type="text" name="language">
+            <label> State </label> <input type="text" name="language">
+            <label> File Location </label> <input type="text" name="language">
+          </fieldset>
+    <input class="btn" type="submit" id="DeletePlanet" value="Delete Planet">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- delete -->
+</body>
+</html>
