@@ -2,7 +2,7 @@ from flask import Flask, render_template, json, redirect
 from flask_mysqldb import MySQL
 from flask import request
 import os
-# import database.db_connector as db
+import database.db_connector as db
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ app.config['MYSQL_CURSORCLASS'] = "DictCursor"
 
 mysql = MySQL(app)
 
-# db_connection = db.connect_to_database()
+db_connection = db.connect_to_database()
 
 # Routes
 @app.route('/')
@@ -22,8 +22,44 @@ def root():
     return render_template("main.j2")
 
 @app.route('/projects')
-def get_proj():
-    return render_template("projects.j2")
+def get_projects():
+    query = "SELECT * FROM Projects"
+    cursor = db.execute_query(db_connection=db_connection, query=query)
+    results = cursor.fetchall()
+    return render_template("projects.j2", Projects=results)
+
+@app.route('/projects-plat', methods=["POST", "GET"])
+def plats():
+    if request.method == "GET":
+        query = "SELECT * FROM Projects"
+        cur = mysql.connection.cursor()
+        cur.execute(query)
+        data = cur.fetchall()
+
+        return render_template("projects-plat.j2", Data=data)
+    
+    if request.method == "POST":
+        if request.form.get("add_Project"):
+            projectID = request.form["projectID"]
+            platMap = request.form["platMap"]
+            startingDate = request.form["startingDate"]
+
+        
+            query = "INSERT INTO Projects (projectID, platMap, startingDate) VALUES (%s, %s, %s)"
+            cur = mysql.connection.cursor()
+            cur.execute(query, (projectID, platMap, startingDate))
+            mysql.connection.commit()
+
+        return redirect("/projects")
+    
+@app.route("/delete_project/<int:projectID>")
+def delete_project(projectID):
+        query = "DELETE FROM Projects where projectID='%s';"  
+        cur = mysql.connection.cursor()
+        cur.execute(query, (projectID,))
+        mysql.connection.commit()
+
+        return redirect("/projects")
 
 @app.route('/municipalities')
 def get_municipalities():
@@ -41,15 +77,15 @@ def get_cases():
 def get_lawyers():
     return render_template("lawyers.j2")
 
-# @app.route('/test-query')
-# def get_db():
-#     query = "SELECT * FROM Projects"
-#     cursor = db.execute_query(db_connection=db_connection, query=query)
-#     results = json.dumps(cursor.fetchall())
-#     return results
+@app.route('/test-query')
+def get_db():
+    query = "SELECT * FROM Projects"
+    cursor = db.execute_query(db_connection=db_connection, query=query)
+    results = json.dumps(cursor.fetchall())
+    return results
 
 # Listener
 if __name__ == "__main__":
         #Start the app on port 3000, it will be different once hosted
-    app.run(port=57300, debug=True)
+    app.run(port=57301, debug=True)
     
