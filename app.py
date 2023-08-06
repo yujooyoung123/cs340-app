@@ -26,7 +26,7 @@ def get_projects():
     query = "SELECT * FROM Projects"
     cursor = db.execute_query(db_connection=db_connection, query=query)
     results = cursor.fetchall()
-    return render_template("projects.j2", Projects=results)
+    return render_template("projects.j2", Data=results)
 
 @app.route('/projects-plat', methods=["POST", "GET"])
 def plats():

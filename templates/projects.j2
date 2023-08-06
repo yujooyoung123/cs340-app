@@ -19,7 +19,7 @@
   <tr>
       <!-- Iterate through each key in the first entry to get the
       column name -->
-      {% for key in Projects[0].keys() %}
+      {% for key in Data[0].keys() %}
 
       <!-- Create a <th> tag with the key inside of it, this will be
       our header row -->
@@ -31,7 +31,7 @@
   <tbody>
 
   <!-- Now, iterate through every person in bsg_people -->
-  {% for project in Projects %}
+  {% for project in Data %}
   <tr>
       <!-- Then iterate through every key in the current person dictionary -->
       {% for key in project.keys() %}
