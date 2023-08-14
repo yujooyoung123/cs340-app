@@ -33,10 +33,10 @@
   </tr>
   <tbody>
 
-  <!-- Now, iterate through every person in Projects -->
+  <!-- Now, iterate through every person in Cases -->
   {% for case in Data %}
   <tr>
-      <!-- Then iterate through every key in the current person dictionary -->
+
       {% for key in case.keys() %}
       <!-- Create a <td> element with the value of that key in it -->
       <td>{{case[key]}}</td>
@@ -48,12 +48,7 @@
 </table>
 
 <p>&nbsp;</p>
-</div> <!-- browse -->
-
-<!-- <div>
-  <a>Search for a Project </a>
-  <input type="text" placeholder="Enter Project ID">
-</div> -->
+</div>
 
 <div id="insert" style="display: block">
     <form method="POST" action="add-case">
@@ -66,7 +61,7 @@
             <label> Lawyer ID </label> <input type="text" name="lawyerID" required>
           </fieldset>
           <input class="btn" type="submit" id="add-case" value="Add a Case">
-	  </form> <!--add new project-->
+	  </form>
 </div>
 </body>
 </html>

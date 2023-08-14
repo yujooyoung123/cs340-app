@@ -33,10 +33,10 @@
   </tr>
   <tbody>
 
-  <!-- Now, iterate through every person in Projects -->
+  <!-- Now, iterate through every person in Municipalities -->
   {% for municipality in Data %}
   <tr>
-      <!-- Then iterate through every key in the current person dictionary -->
+
       {% for key in municipality.keys() %}
       <!-- Create a <td> element with the value of that key in it -->
       <td>{{municipality[key]}}</td>
@@ -48,12 +48,7 @@
 </table>
 
 <p>&nbsp;</p>
-</div> <!-- browse -->
-
-<!-- <div>
-  <a>Search for a Project </a>
-  <input type="text" placeholder="Enter Project ID">
-</div> -->
+</div>
 
 <div id="insert" style="display: block">
     <form method="POST" action="add-municipality">
@@ -66,7 +61,7 @@
             <label> File Location </label> <input type="text" name="fileLocation" required>
           </fieldset>
           <input class="btn" type="submit" id="add-municipality" value="Add a Municipality">
-	  </form> <!--add new project-->
+	  </form>
 </div>
 </body>
 </html>
