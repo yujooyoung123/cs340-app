@@ -11,127 +11,64 @@
      <a href="owners">Owners</a> | <a href="cases">Cases</a> |
      <a href="lawyers">Lawyers</a> ]
 <div id="browse" style="display: block">
-<p><strong>Browse Planets</strong></p>
-<table border="1" cellpadding="5">
+
+<p><strong>Browse Owners</strong></p>
+
+<table>
+  <thead>
+  <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#">New</a></th>
-    <th></th>
-    <th>Owner ID</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Phone Number</th>
-    <th>Email</th>
-    <th>Project ID</th>
-    <th>Case ID</th>
+      <!-- Iterate through each key in the first entry to get the
+      column name -->
+      {% for key in Data[0].keys() %}
+
+      <!-- Create a <th> tag with the key inside of it, this will be
+      our header row -->
+      <th>{{ key }}</th>
+
+      <!-- End of this for loop -->
+      {% endfor %}
+      <td>  </td>
+      <td>  </td>
   </tr>
+  <tbody>
+
+  <!-- Now, iterate through every person in Projects -->
+  {% for owner in Data %}
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >7415</td>
-    <td >J. Schmit</td>
-    <td align="right" >95 Circle Way</td>
-    <td>123-456-7890</td>
-    <td>Jschmit@gmail.com</td>
-    <td>99445</td>
-    <td>33100</td>
+      <!-- Then iterate through every key in the current person dictionary -->
+      {% for key in owner.keys() %}
+      <!-- Create a <td> element with the value of that key in it -->
+      <td>{{owner[key]}}</td>
+      {% endfor %}
+      <td><a href="update-owner/{{ owner["ownerID"] }}">Update</a></td>
+      <td><a href="delete-owner/{{ owner["ownerID"] }}">Delete</a></td>
   </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >7841</td>
-    <td >A. Bond</td>
-    <td align="right" >2354 Ruby Drive</td>
-    <td>987-654-3210</td>
-    <td>BondA@hotmail.com</td>
-    <td>93368</td>
-    <td>32505</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >7111</td>
-    <td >P. Gray</td>
-    <td align="right" >998 Mead Ave</td>
-    <td>888-888-8888</td>
-    <td>Gray123@yahoo.com</td>
-    <td>98744</td>
-    <td>38841</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >7265</td>
-    <td >J. Green</td>
-    <td align="right" >8825 Drive Road</td>
-    <td>999-999-9991</td>
-    <td>Buffgn@gmail.com</td>
-    <td>98744</td>
-    <td>32322</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >7896</td>
-    <td >Y. Song</td>
-    <td align="right" >231 Mingle Street</td>
-    <td>848-878-8989</td>
-    <td>Music@msn.com</td>
-    <td>99363</td>
-    <td>38841</td>
-  </tr>
+  {% endfor %}
 </table>
-<p>&nbsp;</p>
-</div> <!-- browse -->
-<div id="insert" style="display: block">
-    <form id="addPlanet">
-        <legend><strong>Add Owner</strong></legend>
-          <fieldset class="fields">
-            <label> Owner ID </label> <input type="text" name="name">
-            <label> Name </label> <input type="text" name="population">
-            <label> Address </label> <input type="text" name="language">
-            <label> Phone Number </label> <input type="text" name="language">
-            <label> Email </label> <input type="text" name="language">
-            <label> Project ID </label> <input type="text" name="language">
-            <label> Case ID </label> <input type="text" name="language">
-          </fieldset>
-          <input class="btn" type="submit" id="addPlanet" value="Add a Planet">
-          <input class="btn" type="button" value="cancel">
-	</form> <!--add new planet-->
-</div><!-- insert -->
 
 <p>&nbsp;</p>
-<div id="update" style="display: block">
-  <form id="updatePlanet">
-      <legend><strong>Update Owner</strong></legend>
+</div> <!-- browse -->
+
+<!-- <div>
+  <a>Search for a Project </a>
+  <input type="text" placeholder="Enter Project ID">
+</div> -->
+
+<div id="insert" style="display: block">
+    <form method="POST" action="add-owner">
+        <legend><strong>Add Owner</strong></legend>
           <fieldset class="fields">
-            <label> Owner ID </label> <input type="text" name="name">
-            <label> Name </label> <input type="text" name="population">
-            <label> Address </label> <input type="text" name="language">
-            <label> Phone Number </label> <input type="text" name="language">
-            <label> Email </label> <input type="text" name="language">
-            <label> Project ID </label> <input type="text" name="language">
-            <label> Case ID </label> <input type="text" name="language">
+            <label> Owner ID </label> <input type="number" name="ownerID" required>
+            <label> Owner Name </label> <input type="text" name="ownerName" required>
+            <label> Address </label> <input type="text" name="address" required>
+            <label> Phone Number </label> <input type="text" name="phoneNumber" required>
+            <label> Email </label> <input type="text" name="email" required>
+            <label> Project ID </label> <input type="number" name="projectID" required>
+            <label> Case ID </label> <input type="number" name="caseID" required>
           </fieldset>
-    <input class="btn" type="submit" id="UpdateSavePlanet" value="Save Update Planet">
-          <input class="btn" type="button" value="cancel" >
-  </form> 
-</div><!-- update -->
-<p>&nbsp;</p>
-<div id="delete" style="display: block">
-  <form id="deletePlanet">
-      <legend><strong>Delete Owner</strong></legend>
-          <fieldset class="fields">
-            <label> Owner ID </label> <input type="text" name="name">
-            <label> Name </label> <input type="text" name="population">
-            <label> Address </label> <input type="text" name="language">
-            <label> Phone Number </label> <input type="text" name="language">
-            <label> Email </label> <input type="text" name="language">
-            <label> Project ID </label> <input type="text" name="language">
-            <label> Case ID </label> <input type="text" name="language">
-          </fieldset>
-    <input class="btn" type="submit" id="DeletePlanet" value="Delete Planet">
-          <input class="btn" type="button" value="cancel" >
-  </form> 
-</div><!-- delete -->
+          <input class="btn" type="submit" id="add-owner" value="Add an Owner">
+	  </form> <!--add new project-->
+</div>
 </body>
 </html>

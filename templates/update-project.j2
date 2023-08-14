@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Edit Projects</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Edit Project</h1>
+<div style="padding-bottom: 1.5rem">
+    [<a href="/">Home</a> | <a href="/projects">Projects</a> | <a href="/municipalities">Municipalities</a> |
+     <a href="/owners">Owners</a> | <a href="/cases">Cases</a> |
+     <a href="/lawyers">Lawyers</a> ]
+</div>
+
+<div id="browse" style="display: block">
+<form method="POST" action="/update-project/{{ Data["projectID"] }}">
+    <legend><strong>Edit Project: {{ Data["projectID"] }}</strong></legend>
+    <fieldset class="fields">
+        <label> Project ID </label> <input disabled type="number" value="{{ Data["projectID"] }}" name="projectID">
+        <label> Plat Map </label> <input type="text" value="{{ Data["platMap"] }}" name="platMap">
+        <label> Start Date </label> <input type="date" value="{{ Data["startingDate"] }}" name="startingDate">
+    </fieldset>
+    <input class="btn" type="submit" id="update-project" value="Update Project">
+    <input class="btn" type="submit" id="update-project" value="Cancel" >
+</form>

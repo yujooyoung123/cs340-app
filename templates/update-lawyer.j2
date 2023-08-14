@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Edit Lawyers</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Edit Lawyer</h1>
+<div style="padding-bottom: 1.5rem">
+    [<a href="/">Home</a> | <a href="/projects">Projects</a> | <a href="/municipalities">Municipalities</a> |
+     <a href="/owners">Owners</a> | <a href="/cases">Cases</a> |
+     <a href="/lawyers">Lawyers</a> ]
+</div>
+
+<div id="browse" style="display: block">
+<form method="POST" action="/update-lawyer/{{ Data["lawyerID"] }}">
+    <legend><strong>Edit Lawyer: {{ Data["lawyerID"] }}</strong></legend>
+    <fieldset class="fields">
+        <label> Lawyer ID </label> <input disabled type="number" value="{{ Data["lawyerID"] }}" name="lawyerID" required>
+        <label> Lawyer Name </label> <input type="text" value="{{ Data["lawyerName"] }}" name="lawyerName" required>
+        <label> Licensed State </label> <input type="text" value="{{ Data["stateLicensed"] }}" name="stateLicensed" required>
+    </fieldset>
+    <input class="btn" type="submit" id="update-lawyer" value="Update Lawyer">
+    <input class="btn" type="submit" id="update-lawyer" value="Cancel" >
+</form>

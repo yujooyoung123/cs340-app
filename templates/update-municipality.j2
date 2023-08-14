@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Edit Municipalities</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Edit Municipality</h1>
+<div style="padding-bottom: 1.5rem">
+    [<a href="/">Home</a> | <a href="/projects">Projects</a> | <a href="/municipalities">Municipalities</a> |
+     <a href="/owners">Owners</a> | <a href="/cases">Cases</a> |
+     <a href="/lawyers">Lawyers</a> ]
+</div>
+
+<div id="browse" style="display: block">
+<form method="POST" action="/update-municipality/{{ Data["municipalityID"] }}">
+    <legend><strong>Edit Municipality: {{ Data["municipalityID"] }}</strong></legend>
+    <fieldset class="fields">
+        <label> Municipality ID </label> <input disabled type="number" value="{{ Data["municipalityID"] }}" name="municipalityID" required>
+        <label> Municipality Name </label> <input type="text" value="{{ Data["municipalityName"] }}" name="municipalityName" required>
+        <label> Website </label> <input type="text" value="{{ Data["website"] }}" name="website" required>
+        <label> State Name </label> <input type="text" value="{{ Data["stateName"] }}" name="stateName" required>
+        <label> File Location </label> <input type="text" value="{{ Data["fileLocation"] }}" name="fileLocation" required>
+    </fieldset>
+    <input class="btn" type="submit" id="update-municipality" value="Update Municipality">
+    <input class="btn" type="submit" id="update-municipality" value="Cancel" >
+</form>

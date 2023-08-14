@@ -20,7 +20,7 @@ CREATE OR REPLACE TABLE Municipalities (
 CREATE OR REPLACE TABLE Projects (
     projectID int NOT NULL AUTO_INCREMENT,
     platMap varchar(45) NOT NULL,
-    startingDate datetime NOT NULL,
+    startingDate date NOT NULL,
     PRIMARY KEY (projectID)
 );
 

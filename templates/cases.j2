@@ -11,109 +11,62 @@
      <a href="owners">Owners</a> | <a href="cases">Cases</a> |
      <a href="lawyers">Lawyers</a> ]
 <div id="browse" style="display: block">
-<p><strong>Browse Planets</strong></p>
-<table border="1" cellpadding="5">
+
+<p><strong>Browse Cases</strong></p>
+
+<table>
+  <thead>
+  <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#">New</a></th>
-    <th></th>
-    <th>Case ID</th>
-    <th>Case Number</th>
-    <th>Deadline Date</th>
-    <th>Project ID</th>
-    <th>Lawyer ID</th>
+      <!-- Iterate through each key in the first entry to get the
+      column name -->
+      {% for key in Data[0].keys() %}
+
+      <!-- Create a <th> tag with the key inside of it, this will be
+      our header row -->
+      <th>{{ key }}</th>
+
+      <!-- End of this for loop -->
+      {% endfor %}
+      <td>  </td>
+      <td>  </td>
   </tr>
+  <tbody>
+
+  <!-- Now, iterate through every person in Projects -->
+  {% for case in Data %}
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >33100</td>
-    <td >1</td>
-    <td align="right" >09/08/2050</td>
-    <td>99445</td>
-    <td>101</td>
+      <!-- Then iterate through every key in the current person dictionary -->
+      {% for key in case.keys() %}
+      <!-- Create a <td> element with the value of that key in it -->
+      <td>{{case[key]}}</td>
+      {% endfor %}
+      <td><a href="update-case/{{ case["caseID"] }}">Update</a></td>
+      <td><a href="delete-case/{{ case["caseID"] }}">Delete</a></td>
   </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >32505</td>
-    <td>2</td>
-    <td align="right" >07/05/2029</td>
-    <td >98744</td>
-    <td>102</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right">32323</td>
-    <td>3</td>
-    <td align="right" >12/03/2063</td>
-    <td>99363</td>
-    <td>105</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right">32322</td>
-    <td>5</td>
-    <td align="right" >12/25/2099</td>
-    <td>93368</td>
-    <td>108</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right">38841</td>
-    <td>6</td>
-    <td align="right" >08/12/2035</td>
-    <td>91727</td>
-    <td>103</td>
-  </tr>
+  {% endfor %}
 </table>
-<p>&nbsp;</p>
-</div> <!-- browse -->
-<div id="insert" style="display: block">
-    <form id="addPlanet">
-        <legend><strong>Add Case</strong></legend>
-          <fieldset class="fields">
-            <label> Case ID </label> <input type="text" name="name">
-            <label> Case Number </label> <input type="text" name="population">
-            <label> Deadline Date </label> <input type="text" name="language">
-            <label> Project ID </label> <input type="text" name="language">
-            <label> Lawyer ID </label> <input type="text" name="language">
-          </fieldset>
-          <input class="btn" type="submit" id="addPlanet" value="Add a Planet">
-          <input class="btn" type="button" value="cancel">
-	</form> <!--add new planet-->
-</div><!-- insert -->
 
 <p>&nbsp;</p>
-<div id="update" style="display: block">
-  <form id="updatePlanet">
-      <legend><strong>Update Case</strong></legend>
+</div> <!-- browse -->
+
+<!-- <div>
+  <a>Search for a Project </a>
+  <input type="text" placeholder="Enter Project ID">
+</div> -->
+
+<div id="insert" style="display: block">
+    <form method="POST" action="add-case">
+        <legend><strong>Add Case</strong></legend>
           <fieldset class="fields">
-            <label> Case ID </label> <input type="text" name="name">
-            <label> Case Number </label> <input type="text" name="population">
-            <label> Deadline Date </label> <input type="text" name="language">
-            <label> Project ID </label> <input type="text" name="language">
-            <label> Lawyer ID </label> <input type="text" name="language">
+            <label> Case ID </label> <input type="number" name="caseID" required>
+            <label> Case Number </label> <input type="text" name="caseNumber" required>
+            <label> Deadline </label> <input type="date" name="deadlineDate" required>
+            <label> Project ID </label> <input type="text" name="projectID" required>
+            <label> Lawyer ID </label> <input type="text" name="lawyerID" required>
           </fieldset>
-    <input class="btn" type="submit" id="UpdateSavePlanet" value="Save Update Planet">
-          <input class="btn" type="button" value="cancel" >
-  </form> 
-</div><!-- update -->
-<p>&nbsp;</p>
-<div id="delete" style="display: block">
-  <form id="deletePlanet">
-      <legend><strong>Delete Case</strong></legend>
-          <fieldset class="fields">
-            <label> Case ID </label> <input type="text" name="name">
-            <label> Case Number </label> <input type="text" name="population">
-            <label> Deadline Date </label> <input type="text" name="language">
-            <label> Project ID </label> <input type="text" name="language">
-            <label> Lawyer ID </label> <input type="text" name="language">
-          </fieldset>
-    <input class="btn" type="submit" id="DeletePlanet" value="Delete Planet">
-          <input class="btn" type="button" value="cancel" >
-  </form> 
-</div><!-- delete -->
+          <input class="btn" type="submit" id="add-case" value="Add a Case">
+	  </form> <!--add new project-->
+</div>
 </body>
 </html>

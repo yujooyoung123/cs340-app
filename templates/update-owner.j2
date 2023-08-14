@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Edit Owners</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Edit Owners</h1>
+<div style="padding-bottom: 1.5rem">
+    [<a href="/">Home</a> | <a href="/projects">Projects</a> | <a href="/municipalities">Municipalities</a> |
+     <a href="/owners">Owners</a> | <a href="/cases">Cases</a> |
+     <a href="/lawyers">Lawyers</a> ]
+</div>
+
+<div id="browse" style="display: block">
+<form method="POST" action="/update-owner/{{ Data["ownerID"] }}">
+    <legend><strong>Edit Owner: {{ Data["ownerID"] }}</strong></legend>
+    <fieldset class="fields">
+        <label> Owner ID </label> <input disabled type="number" value="{{ Data["ownerID"] }}" name="ownerID" required>
+        <label> Owner Name </label> <input type="text" value="{{ Data["ownerID"] }}" name="ownerName" required>
+        <label> Address </label> <input type="text" value="{{ Data["address"] }}" name="address" required>
+        <label> Phone Number </label> <input type="text" value="{{ Data["phoneNumber"] }}" name="phoneNumber" required>
+        <label> Email </label> <input type="text" value="{{ Data["email"] }}" name="email" required>
+        <label> Project ID </label> <input type="number" value="{{ Data["projectID"] }}" name="projectID" required>
+        <label> Case ID </label> <input type="number" value="{{ Data["caseID"] }}" name="caseID" required>
+    </fieldset>
+    <input class="btn" type="submit" id="update-owner" value="Update Owner">
+    <input class="btn" type="submit" id="update-owner" value="Cancel" >
+</form>

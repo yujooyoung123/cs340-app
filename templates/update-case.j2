@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Edit Cases</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Edit Case</h1>
+<div style="padding-bottom: 1.5rem">
+    [<a href="/">Home</a> | <a href="/projects">Projects</a> | <a href="/municipalities">Municipalities</a> |
+     <a href="/owners">Owners</a> | <a href="/cases">Cases</a> |
+     <a href="/lawyers">Lawyers</a> ]
+</div>
+
+<div id="browse" style="display: block">
+<form method="POST" action="/update-case/{{ Data["caseID"] }}">
+    <legend><strong>Edit Case: {{ Data["caseID"] }}</strong></legend>
+    <fieldset class="fields">
+        <label> Case ID </label> <input disabled type="number" value="{{ Data["caseID"] }}" name="caseID" required>
+        <label> Case Number </label> <input type="text" value="{{ Data["caseNumber"] }}" name="caseNumber" required>
+        <label> Deadline </label> <input type="date" value="{{ Data["deadlineDate"] }}" name="deadlineDate" required>
+        <label> Project ID </label> <input type="text" value="{{ Data["projectID"] }}" name="projectID" required>
+        <label> Lawyer ID </label> <input type="text" value="{{ Data["lawyerID"] }}" name="lawyerID" required>
+    </fieldset>
+    <input class="btn" type="submit" id="update-case" value="Update Case">
+    <input class="btn" type="submit" id="update-case" value="Cancel" >
+</form>

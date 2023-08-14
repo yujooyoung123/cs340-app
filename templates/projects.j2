@@ -16,6 +16,7 @@
 
 <table>
   <thead>
+  <table border="1" cellpadding="5">
   <tr>
       <!-- Iterate through each key in the first entry to get the
       column name -->
@@ -27,67 +28,43 @@
 
       <!-- End of this for loop -->
       {% endfor %}
+      <td>  </td>
+      <td>  </td>
   </tr>
   <tbody>
 
-  <!-- Now, iterate through every person in bsg_people -->
+  <!-- Now, iterate through every person in Projects -->
   {% for project in Data %}
   <tr>
       <!-- Then iterate through every key in the current person dictionary -->
       {% for key in project.keys() %}
-
       <!-- Create a <td> element with the value of that key in it -->
       <td>{{project[key]}}</td>
       {% endfor %}
+      <td><a href="update-project/{{ project["projectID"] }}">Update</a></td>
+      <td><a href="delete-project/{{ project["projectID"] }}">Delete</a></td>
   </tr>
   {% endfor %}
-  </table>
+</table>
 
 <p>&nbsp;</p>
 </div> <!-- browse -->
 
-<div>
+<!-- <div>
   <a>Search for a Project </a>
   <input type="text" placeholder="Enter Project ID">
-</div>
+</div> -->
 
 <div id="insert" style="display: block">
-    <form id="addPlanet">
+    <form method="POST" action="add-project">
         <legend><strong>Add Project</strong></legend>
           <fieldset class="fields">
-            <label> Project ID </label> <input type="text" name="name">
-            <label> Plat Map </label> <input type="text" name="population">
-            <label> Start Date </label> <input type="text" name="language">
+            <label> Project ID </label> <input type="number" name="projectID" required>
+            <label> Plat Map </label> <input type="text" name="platMap" required>
+            <label> Start Date </label> <input type="date" name="startingDate" required>
           </fieldset>
-          <input class="btn" type="submit" id="addPlanet" value="Add a Planet">
-          <input class="btn" type="button" value="cancel">
-	</form> <!--add new planet-->
-</div><!-- insert -->
-
-<p>&nbsp;</p>
-<div id="update" style="display: block">
-  <form id="updateProject">
-      <legend><strong>Update Project</strong></legend>
-          <fieldset class="fields">
-            <label> Project ID </label> <input type="text" name="name">
-            <label> Plat Map </label> <input type="text" name="population">
-            <label> Start Date </label> <input type="text" name="language">
-          </fieldset>
-    <input class="btn" type="submit" id="UpdateSavePlanet" value="Save Update Planet">
-          <input class="btn" type="button" value="cancel" >
-  </form> 
-</div><!-- update -->
-<p>&nbsp;</p>
-<div id="delete" style="display: block">
-      <legend><strong>Delete Project</strong></legend>
-          <fieldset class="fields">
-            <label> Project ID </label> <input type="text" name="name">
-            <label> Plat Map </label> <input type="text" name="population">
-            <label> Start Date </label> <input type="text" name="language">
-          </fieldset>
-    <input class="btn" type="submit" id="DeletePlanet" value="Delete Planet">
-          <input class="btn" type="button" value="cancel" >
-  </form> 
-</div><!-- delete -->
+          <input class="btn" type="submit" id="add-project" value="Add a Project">
+	  </form> <!--add new project-->
+</div>
 </body>
 </html>
