@@ -16,7 +16,7 @@
 <form method="POST" action="/update-municipality/{{ Data["municipalityID"] }}">
     <legend><strong>Edit Municipality: {{ Data["municipalityID"] }}</strong></legend>
     <fieldset class="fields">
-        <label> Municipality ID </label> <input disabled type="number" value="{{ Data["municipalityID"] }}" name="municipalityID" required>
+        <label> Municipality ID </label> <input disabled type="number" value="{{ Data["municipalityID"] }}" name="municipalityID">
         <label> Municipality Name </label> <input type="text" value="{{ Data["municipalityName"] }}" name="municipalityName" required>
         <label> Website </label> <input type="text" value="{{ Data["website"] }}" name="website" required>
         <label> State Name </label> <input type="text" value="{{ Data["stateName"] }}" name="stateName" required>

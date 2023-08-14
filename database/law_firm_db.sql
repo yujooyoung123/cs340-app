@@ -94,9 +94,9 @@ VALUES (5214, 99445),
 
 -- Inserting Test Data into Owners
 INSERT INTO Owners (ownerID, ownerName, address, phoneNumber, email, projectID, caseID)
-VALUES (7415, 'J. Schmit', '95 Circle Way', '123-456-7890', 'jschmit@gmail.com', 99445, 33100),
+VALUES (7415, 'J. Schmit', '95 Circle Way', '123-456-7890', 'jschmit@gmail.com', 99445, NULL),
 (7841, 'A. Bond', '2354 Ruby Drive', '987-654-3210', 'BondA@hotmail.com', 93368, 32505),
-(7111, 'P.Gray', '998 Mead Ave.', '888-888-8888', 'Gray123@yahoo.com', 91727, 32323),
+(7111, 'P.Gray', '998 Mead Ave.', '888-888-8888', 'Gray123@yahoo.com', 91727, NULL),
 (7265, 'J. Green', '8825 Drive Road', '999-999-9991', 'Buffgn@gmail.com', 98744, 32322),
 (7896, 'Y. Song', '231 Mingle Street', '848-878-8989', 'Music@msn.com', 99363, 38841);
 

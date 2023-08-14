@@ -116,6 +116,7 @@ def delete_municipality(municipalityID):
 
         return redirect("/municipalities")
 
+
 @app.route("/update-municipality/<int:municipalityID>", methods=["POST", "GET"])
 def update_municipality(municipalityID):
     if request.method == "GET":
@@ -127,13 +128,12 @@ def update_municipality(municipalityID):
         return render_template("update-municipality.j2", Data=project_data)
     
     elif request.method == "POST":   
-        municipalityID = request.form["municipalityID"]
         municipalityName = request.form["municipalityName"]
         website = request.form["website"]
         stateName = request.form["stateName"]
         fileLocation = request.form["fileLocation"]
         
-        query = "UPDATE Municipalities SET municipalityName = %s, website = %s, stateName = %s, fileLocation = %s, WHERE municipalityID = %s"
+        query = "UPDATE Municipalities SET municipalityName = %s, website = %s, stateName = %s, fileLocation = %s WHERE municipalityID = %s"
         cur = mysql.connection.cursor()
         cur.execute(query, (municipalityName, website, stateName, fileLocation, municipalityID))
         mysql.connection.commit()
@@ -191,7 +191,6 @@ def update_owner(ownerID):
         return render_template("update-owner.j2", Data=project_data)
     
     elif request.method == "POST":   
-        ownerID = request.form["ownerID"]
         ownerName = request.form["ownerName"]
         address = request.form["address"]
         phoneNumber = request.form["phoneNumber"]
@@ -199,7 +198,7 @@ def update_owner(ownerID):
         projectID = request.form["projectID"]
         caseID = request.form["caseID"]
         
-        query = "UPDATE Owners SET ownerName = %s, address = %s, phoneNumber = %s, email = %s, projectID = %s, caseID = %s, WHERE ownerID = %s;"
+        query = "UPDATE Owners SET ownerName = %s, address = %s, phoneNumber = %s, email = %s, projectID = %s, caseID = %s WHERE ownerID = %s;"
         cur = mysql.connection.cursor()
         cur.execute(query, (ownerName, address, phoneNumber, email, projectID, caseID, ownerID))
         mysql.connection.commit()
@@ -223,7 +222,8 @@ def get_cases():
 def add_case():
     caseID = request.form["caseID"]
     caseNumber = request.form["caseNumber"]
-    deadlineDate = request.form["deadlineDate"]
+    date_string = request.form["deadlineDate"]
+    deadlineDate = date_string.replace("-", "")
     projectID = request.form["projectID"]
     lawyerID = request.form["lawyerID"]
     
@@ -246,7 +246,7 @@ def delete_case(caseID):
 @app.route("/update-case/<int:caseID>", methods=["POST", "GET"])
 def update_case(caseID):
     if request.method == "GET":
-        query = "SELECT * FROM Cases WHERE casesID=%s;"
+        query = "SELECT * FROM Cases WHERE caseID=%s;"
         cur = mysql.connection.cursor()
         cur.execute(query, (caseID,))
         project_data = cur.fetchone()
@@ -254,9 +254,9 @@ def update_case(caseID):
         return render_template("update-case.j2", Data=project_data)
     
     elif request.method == "POST":   
-        caseID = request.form["caseID"]
         caseNumber = request.form["caseNumber"]
-        deadlineDate = request.form["deadlineDate"]
+        date_string = request.form["deadlineDate"]
+        deadlineDate = date_string.replace("-", "")
         projectID = request.form["projectID"]
         lawyerID = request.form["lawyerID"]
         
@@ -313,11 +313,10 @@ def update_lawyer(lawyerID):
         return render_template("update-lawyer.j2", Data=project_data)
     
     elif request.method == "POST":
-        lawyerID = request.form["lawyerID"]
         lawyerName = request.form["lawyerName"]
         stateLicensed = request.form["stateLicensed"]
         
-        query = "UPDATE Lawyers SET lawyerName = %s, stateLicensed = %s, WHERE lawyerID = %s;"
+        query = "UPDATE Lawyers SET lawyerName = %s, stateLicensed = %s WHERE lawyerID = %s;"
         cur = mysql.connection.cursor()
         cur.execute(query, (lawyerName, stateLicensed, lawyerID))
         mysql.connection.commit()

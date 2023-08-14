@@ -17,8 +17,8 @@
     <legend><strong>Edit Project: {{ Data["projectID"] }}</strong></legend>
     <fieldset class="fields">
         <label> Project ID </label> <input disabled type="number" value="{{ Data["projectID"] }}" name="projectID">
-        <label> Plat Map </label> <input type="text" value="{{ Data["platMap"] }}" name="platMap">
-        <label> Start Date </label> <input type="date" value="{{ Data["startingDate"] }}" name="startingDate">
+        <label> Plat Map </label> <input type="text" value="{{ Data["platMap"] }}" name="platMap" required>
+        <label> Start Date </label> <input type="date" value="{{ Data["startingDate"] }}" name="startingDate" required>
     </fieldset>
     <input class="btn" type="submit" id="update-project" value="Update Project">
     <input class="btn" type="submit" id="update-project" value="Cancel" >

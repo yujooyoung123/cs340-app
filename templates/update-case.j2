@@ -16,7 +16,7 @@
 <form method="POST" action="/update-case/{{ Data["caseID"] }}">
     <legend><strong>Edit Case: {{ Data["caseID"] }}</strong></legend>
     <fieldset class="fields">
-        <label> Case ID </label> <input disabled type="number" value="{{ Data["caseID"] }}" name="caseID" required>
+        <label> Case ID </label> <input disabled type="number" value="{{ Data["caseID"] }}" name="caseID">
         <label> Case Number </label> <input type="text" value="{{ Data["caseNumber"] }}" name="caseNumber" required>
         <label> Deadline </label> <input type="date" value="{{ Data["deadlineDate"] }}" name="deadlineDate" required>
         <label> Project ID </label> <input type="text" value="{{ Data["projectID"] }}" name="projectID" required>
